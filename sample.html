@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<fieldset id="fieldset">
+    <p class="row">
+        <label>Gabriel</label>      
+        <input type="text" name="txt1" />
+        <input type="checkbox" name="cb1" />
+        
+            <input type="radio" name="rd1" value="1" />Opção 1
+            <input type="radio" name="rd1" value="2" />Opção 2
+        
+        <select id="s1" name="s1"><option value="0">Selecionar</option><option value="1">Gabriel</option></select>
+    </p>
+</fieldset>
+
+<table id="tabela">
+    <tr class="row">
+        <td>Gabriel</td>      
+        <td><input type="text" name="txt1" /></td>
+        <td><input type="checkbox" name="cb1" /></td>
+        <td>
+            <input type="radio" name="rd1" value="1" />Opção 1
+            <input type="radio" name="rd1" value="2" />Opção 2
+        </td>
+        <td><select id="s1" name="s1"><option value="0">Selecionar</option><option value="1">Gabriel</option></select></td>
+    </tr>
+    <tr>
+        <td>TESTE TESTE TESTE</td>
+    </tr>
+</table>
+<script src="lib/jquery.1.8.1.js"></script>
+<script src="rowCloned.js"></script>
+<script>
+	$('#tabela, #fieldset').rowCloned({
+		initialRows: 3,				
+		maxRows: {
+			max: 5
+		},
+		addRow: function(){
+			//alert('executa em cada linha adicionada, para não adicionar a linha, basta retornar false.');       
+		}
+	});
+</script>
+</body>
+</html>
